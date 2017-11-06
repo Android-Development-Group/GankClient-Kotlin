@@ -11,20 +11,20 @@ import javax.inject.Inject
  */
 class FuckGoodsPresenter
 @Inject constructor(private val mModel: FuckGoodsModel,
-    private val mView: FuckGoodsContract.View)
-: FuckGoodsContract.Presenter, BasePresenter() {
+                    private val mView: FuckGoodsContract.View)
+    : FuckGoodsContract.Presenter, BasePresenter() {
 
 
-  override fun getData(page: Int, type: String) {
-    addSubscription(mModel.getData(page, type).observeOn(AndroidSchedulers.mainThread())
-        .subscribe({
+    override fun getData(page: Int, type: String) {
+        addSubscription(mModel.getData(page, type).observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
 
-          res ->
-          if (!res.error) {
-            mView.setData(res.results)
-          }
+                    res ->
+                    if (!res.error) {
+                        mView.setData(res.results)
+                    }
 
-        }, { e -> Log.e("wing", "error android Presenter" + e.message) }))
-  }
+                }, { e -> Log.e("wing", "error android Presenter" + e.message) }))
+    }
 
 }

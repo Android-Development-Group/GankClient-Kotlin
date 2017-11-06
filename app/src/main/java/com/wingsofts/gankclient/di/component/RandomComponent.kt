@@ -16,5 +16,6 @@ interface RandomComponent {
 
 @Module
 class RandomModule(private val mView: RandomContract.View) {
-    @Provides fun getView() = mView
+    @Provides
+    fun getView() = mView
 }

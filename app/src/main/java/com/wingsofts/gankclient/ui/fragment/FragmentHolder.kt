@@ -1,19 +1,16 @@
 package com.wingsofts.gankclient.ui.fragment
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.wingsofts.gankclient.databinding.FragmentAboutBinding
-import kotlinx.android.synthetic.main.fragment_about.*
 
 /**
  * Created by wing on 16-11-24.
  */
 class FragmentHolder : BaseBingingFragment<FragmentAboutBinding>() {
     override fun createDataBinding(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): FragmentAboutBinding {
-        return FragmentAboutBinding.inflate(inflater, container, false)
+        return FragmentAboutBinding.inflate(inflater!!, container, false)
     }
 
     override fun initView() {

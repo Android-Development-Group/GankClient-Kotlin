@@ -13,8 +13,7 @@ class RandomPresenter
                     private val mView: RandomContract.View) : RandomContract.Presenter, BasePresenter() {
     override fun getRandom(type: String) {
         addSubscription(mModel.getRandom(type).observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    res ->
+                .subscribe({ res ->
                     if (!res.error) {
                         mView.onRandom(res.results[0])
                     }

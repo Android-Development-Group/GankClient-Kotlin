@@ -1,10 +1,8 @@
 package com.wingsofts.gankclient.ui.adapter
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.wingsofts.gankclient.bean.FuckGoods
-import com.wingsofts.gankclient.databinding.ItemFuckgoodsBinding
 import com.wingsofts.gankclient.databinding.ItemGirlBinding
 
 /**

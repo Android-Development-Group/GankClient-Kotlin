@@ -24,10 +24,10 @@ abstract class BaseBindingActivity<B : ViewDataBinding> : AppCompatActivity() {
 
     abstract fun initView()
 
-    abstract fun  createDataBinding(savedInstanceState: Bundle?): B
+    abstract fun createDataBinding(savedInstanceState: Bundle?): B
 
 
-    fun setupToolbar(toolbar: Toolbar){
+    fun setupToolbar(toolbar: Toolbar) {
         toolbar.title = ""
         toolbar.setNavigationIcon(R.drawable.icon_back)
         setSupportActionBar(toolbar)

@@ -1,31 +1,29 @@
 package com.wingsofts.gankclient.ui.widget
 
 import android.content.Context
-import android.webkit.WebView
-import android.widget.ProgressBar
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.widget.AbsoluteLayout
-import com.wingsofts.gankclient.R
 import android.view.View
+import android.webkit.WebView
+import android.widget.AbsoluteLayout
+import android.widget.ProgressBar
+import com.wingsofts.gankclient.R
 
 /**
  * Created by wing on 16-11-25.
  */
 class ProgressWebView(context: Context, attrs: AttributeSet) : WebView(context, attrs) {
 
-    private val progressbar: ProgressBar
+    val progressbar: ProgressBar = ProgressBar(context, null,
+            android.R.attr.progressBarStyleHorizontal)
 
     init {
-        progressbar = ProgressBar(context, null,
-                android.R.attr.progressBarStyleHorizontal)
         progressbar.layoutParams = AbsoluteLayout.LayoutParams(AbsoluteLayout.LayoutParams.FILL_PARENT,
                 10, 0, 0)
 
         val drawable = context.resources.getDrawable(R.drawable.progress_bar)
         progressbar.progressDrawable = drawable
         addView(progressbar)
-        setWebChromeClient(WebChromeClient())
+        webChromeClient = WebChromeClient()
         settings.builtInZoomControls = true
     }
 

@@ -7,16 +7,18 @@ import rx.Observable
 /**
  * Created by wing on 16-11-25.
  */
-interface RandomContract{
-    interface View{
-        fun onRandom(goods:FuckGoods)
+interface RandomContract {
+    interface View {
+        fun onRandom(goods: FuckGoods)
 
     }
-    interface Model{
+
+    interface Model {
 
         fun getRandom(type: String): Observable<JsonResult<List<FuckGoods>>>
     }
-    interface Presenter{
+
+    interface Presenter {
 
         fun getRandom(type: String)
     }

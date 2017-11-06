@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import com.wingsofts.gankclient.R
@@ -31,9 +30,9 @@ class ImageActivity : BaseBindingActivity<ActivityImageBinding>() {
         fun startActivity(context: Context, imageView: ImageView, url: String) {
             val intent = Intent(context, ImageActivity::class.java)
             intent.putExtra(IMG, url)
-            if(Build.VERSION.SDK_INT > 21) {
+            if (Build.VERSION.SDK_INT > 21) {
                 context.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(context as Activity, imageView, "img").toBundle())
-            }else{
+            } else {
                 context.startActivity(intent)
             }
         }

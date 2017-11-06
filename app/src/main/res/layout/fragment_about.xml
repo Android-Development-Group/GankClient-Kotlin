@@ -3,45 +3,45 @@
 
     <data>
 
-        <import type="com.wingsofts.gankclient.R" />
+        <import type="com.wingsofts.gankclient.R"/>
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:gravity="center"
+                  android:orientation="vertical">
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:load_asset="@{R.drawable.avatar}" />
+            app:load_asset="@{R.drawable.avatar}"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="作者:wing" />
+            android:text="作者:wing"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:autoLink="web"
-            android:text="https://github.com/githubwing" />
+            android:text="https://github.com/githubwing"/>
 
         <TextView
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="感谢："
-            android:textColor="#000" />
+            android:textColor="#000"/>
 
         <TextView
-            android:gravity="center"
             android:id="@+id/tv_thank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#000" />
+            android:gravity="center"
+            android:textColor="#000"/>
     </LinearLayout>
 </layout>

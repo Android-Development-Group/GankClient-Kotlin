@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.wingsofts.gankclient"
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion 19
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -27,49 +26,64 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.0.1'
-
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation 'com.android.support.test:runner:0.5'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+    testImplementation 'junit:junit:4.12'
 
     def dependencies = rootProject.ext.dependencies
 
-    compile dependencies.supportDesign
-    compile dependencies.supportRecyclerview
-    compile dependencies.supportCardView
-    compile dependencies.supportMultidex
+    implementation dependencies.supportDesign
+    implementation dependencies.supportRecyclerview
+    implementation dependencies.supportCardView
+    implementation dependencies.supportMultidex
 
-//
-    compile dependencies.rxJava
-    compile dependencies.rxAndroid
+    //rxJava
+    implementation dependencies.rxJava
+    implementation dependencies.rxAndroid
 
-    compile dependencies.gson
-    compile dependencies.retrofit
-    compile dependencies.retrofitRxjavaAdapter
-    compile dependencies.retrofitGsonConverter
-    compile dependencies.okhttp3
-    compile dependencies.okhttpLoggingInterceptor
+    implementation dependencies.gson
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitRxjavaAdapter
+    implementation dependencies.retrofitGsonConverter
+    implementation dependencies.okhttp3
+    implementation dependencies.okhttpLoggingInterceptor
 
-    compile dependencies.glide
-    compile dependencies.dagger
+    implementation dependencies.glide
+    implementation dependencies.dagger
     kapt dependencies.daggerCompiler
-    provided dependencies.javaxAnnotation
+    compileOnly dependencies.javaxAnnotation
 
-    compile dependencies.kotlinStdlib
-    compile dependencies.kotlinReflect
+    // Kotlin
+//    implementation dependencies.kotlinStdlib
+//    implementation dependencies.kotlinReflect
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    // Anko All
+//    implementation "org.jetbrains.anko:anko:$anko_version"
+    // Anko Commons
+//    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+
+    // Anko Layouts
+//    implementation "org.jetbrains.anko:anko-sdk25:$anko_version" // sdk15, sdk19, sdk21, sdk23 are also available
+//    implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+
+    // Coroutine listeners for Anko Layouts
+//    implementation "org.jetbrains.anko:anko-sdk25-coroutines:$anko_version"
+//    implementation "org.jetbrains.anko:anko-appcompat-v7-coroutines:$anko_version"
+
+    // Anko SQLite
+//    implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
 
     //deep link
-    compile 'com.airbnb:deeplinkdispatch:2.0.1'
+    implementation 'com.airbnb:deeplinkdispatch:2.0.1'
     kapt 'com.airbnb:deeplinkdispatch-processor:2.0.1'
 
 
-    compile 'com.github.githubwing:ByeBurger:1.2.2'
+    implementation 'com.github.githubwing:ByeBurger:1.2.2'
     kapt 'com.android.databinding:compiler:1.0-rc5'
-    // Kotlin
-//    compile dependencies.kotlinStdlib
-    testCompile 'junit:junit:4.12'
+
+    kapt 'com.android.databinding:compiler:3.0.0'
 }
 kapt {
     generateStubs = true

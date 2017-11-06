@@ -1,6 +1,5 @@
 package com.wingsofts.gankclient.mvp.presenter
 
-import rx.Subscriber
 import rx.Subscription
 import rx.subscriptions.CompositeSubscription
 
@@ -14,8 +13,8 @@ open class BasePresenter {
         compositeSubscription.add(subscription)
     }
 
-     fun unSubscribe() {
-        if(compositeSubscription.hasSubscriptions()){
+    fun unSubscribe() {
+        if (compositeSubscription.hasSubscriptions()) {
             compositeSubscription.unsubscribe()
         }
     }

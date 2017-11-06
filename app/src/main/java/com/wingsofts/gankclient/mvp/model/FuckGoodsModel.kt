@@ -16,12 +16,12 @@ import javax.inject.Inject
 class FuckGoodsModel
 @Inject constructor(private val api: GankApi) : FuckGoodsContract.Model {
 
-  override fun getData(page: Int, type: String): Observable<JsonResult<List<FuckGoods>>> {
-    when (type) {
-      AndroidFragment.ANDROID -> return api.getAndroidData(page)
-      IOSFragment.IOS -> return api.getiOSData(page)
-      GirlFragment.GIRL -> return api.getGirlData(page)
-      else -> return api.getAndroidData(page)
+    override fun getData(page: Int, type: String): Observable<JsonResult<List<FuckGoods>>> {
+        when (type) {
+            AndroidFragment.ANDROID -> return api.getAndroidData(page)
+            IOSFragment.IOS -> return api.getiOSData(page)
+            GirlFragment.GIRL -> return api.getGirlData(page)
+            else -> return api.getAndroidData(page)
+        }
     }
-  }
 }

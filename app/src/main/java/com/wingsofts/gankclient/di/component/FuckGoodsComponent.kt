@@ -20,6 +20,7 @@ interface FuckGoodsComponent {
 }
 
 @Module
-class FuckGoodsModule(private val mView: FuckGoodsContract.View){
-    @Provides fun getView() = mView
+class FuckGoodsModule(private val mView: FuckGoodsContract.View) {
+    @Provides
+    fun getView() = mView
 }

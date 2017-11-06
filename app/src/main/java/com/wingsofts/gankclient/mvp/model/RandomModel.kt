@@ -11,9 +11,9 @@ import javax.inject.Inject
  * Created by wing on 16-11-25.
  */
 class RandomModel
-@Inject constructor(private val api:GankApi) :RandomContract.Model{
+@Inject constructor(private val api: GankApi) : RandomContract.Model {
 
-    override fun getRandom(type:String): Observable<JsonResult<List<FuckGoods>>> {
+    override fun getRandom(type: String): Observable<JsonResult<List<FuckGoods>>> {
         return api.getRandom(type)
     }
 }
